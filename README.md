@@ -10,12 +10,12 @@ Spring Boot 기반 블로그 애플리케이션
 - Spring Security
 
 ## 기술 스택
-- Java
-- Spring Boot
+- Java 17
+- Spring Boot 3.2.0
 - Gradle
 
 
   ## 실행 방법
+  터미널에서 아래 명령어를 입력하여 프로젝트를 실행할 수 있습니다.
   ```bash
 ./gradlew bootRun
-```
