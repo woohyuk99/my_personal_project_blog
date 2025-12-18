@@ -10,12 +10,10 @@ version = '1.0.0'
 description = 'spring_docker'
 
 java {
-//    toolchain {
-//        languageVersion = JavaLanguageVersion.of(17)
-//    }
     sourceCompatibility = '17'
     targetCompatibility = '17'
 }
+
 
 
 configurations {
@@ -37,7 +35,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'io.jsonwebtoken::jjwt-api:0.12.3'
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
     compileOnly 'org.projectlombok:lombok'
