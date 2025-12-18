@@ -10,9 +10,10 @@ version = '1.0.0'
 description = 'spring_docker'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(17)
+//    }
+    sourceCompatibility = '17'
 }
 
 
