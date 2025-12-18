@@ -19,6 +19,6 @@ public class SecurityConfig {
         );
     // h2-console 설정
     http.headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
-    return http.build();
+    return http.build(); ///
   }
 }
