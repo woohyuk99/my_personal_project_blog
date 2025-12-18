@@ -17,6 +17,12 @@ spring:
       maxFileSize: 100MB # 파일 하나의 최대 크기
       maxRequestSize: 300MB  # 한 번에 최대 업로드 가능 용량
 
+  datasource: # [필수 추가] DB 연결 설정이 없으면 서버가 켜지지 않습니다! -> PostgreSQL 과의 연결
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres # 'postgres' 대신 본인 DB명 입력
+    username: postgres # 본인 DB 아이디
+    password: postgres # 본인 DB 비밀번호
+
   # JPA, db 작동 방식 및 ORM(객체 - db 매핑) 담당
   jpa:
     hibernate:
@@ -33,6 +39,27 @@ spring:
         physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
         jdbc.time_zone: UTC
     open-in-view: false
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
+
+
+          github:
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
+            scope:
+              - user:email
+              - read:user
+
+
 
 
   # Spring Boot Admin Client 설정
@@ -114,3 +141,11 @@ management:
       enabled: true
     build:
       enabled: true
+
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000 # 24시간 (밀리초)
+  refresh-expiration: 604800000 # 7일
+
+
